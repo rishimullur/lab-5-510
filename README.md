@@ -1,6 +1,6 @@
 Lab 5
 
-# App Name
+# AI Resume Coach
 
 This is a simple streamlit app that utilizes the Gemini API and Streamlit to act as an AI resume helper.
 
