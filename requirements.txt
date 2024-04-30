@@ -1,2 +1,5 @@
-gemini-api-openai
 streamlit
+python-dotenv
+psycopg2-binary
+tqdm
+google-generativeai

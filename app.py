@@ -1,30 +1,36 @@
+import os
+import google.generativeai as genai
+from dotenv import load_dotenv
 import streamlit as st
-from gemini_api_openai import GeminiClient
 
-# Set up Gemini API client
-api_key = "YOUR_GEMINI_API_KEY"
-client = GeminiClient(api_key)
+load_dotenv()
 
-def main():
-    st.title("Resume Coach")
-    st.write("This app provides personalized resume coaching based on a job description.")
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+model = genai.GenerativeModel('gemini-pro')
 
-    # Get job description from user
-    job_description = st.text_area("Enter the job description here:")
+prompt_template = """
+You are an expert resume coach and career advisor.
 
-    # Get user's resume
-    resume_text = st.text_area("Enter your resume here:")
+Please provide comprehensive resume advice and tips tailored to the given job description.
 
-    if st.button("Get Resume Coaching"):
-        if not job_description or not resume_text:
-            st.warning("Please enter both the job description and your resume.")
-        else:
-            try:
-                # Call Gemini API for resume coaching
-                response = client.resume_coach(job_description, resume_text)
-                st.success(response.text)
-            except Exception as e:
-                st.error(f"An error occurred: {e}")
+Please include the following details:
+- Key skills and qualifications to highlight
+- Relevant experience and accomplishments to emphasize
+- Resume formatting and structure recommendations
+- Any additional tips or advice to improve the chances of getting an interview
 
-if __name__ == "__main__":
-    main()
+The job description is:
+{prompt}
+"""
+
+def generate_resume_advice(prompt):
+    response = model.generate_content(prompt_template.format(prompt=prompt))
+    return response.text
+
+st.title("📝 AI Resume Coach")
+
+job_description = st.text_area("Enter the job description you want resume advice for:")
+
+if st.button("Get Resume Advice"):
+    advice = generate_resume_advice(job_description)
+    st.write(advice)
