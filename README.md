@@ -9,13 +9,13 @@ This is a simple streamlit app that utilizes the Gemini API and Streamlit to act
 1. Clone the repository:
 
     ```shell
-    git clone https://github.com/your-username/your-repo.git
+    git clone git@github.com:rishimullur/lab-5-510.git
     ```
 
 2. Navigate to the project directory:
 
     ```shell
-    cd your-repo
+    cd lab-5-510
     ```
 
 3. Install the required dependencies:
@@ -29,7 +29,7 @@ This is a simple streamlit app that utilizes the Gemini API and Streamlit to act
 1. Set up your Gemini API credentials by creating a `.env` file in the project directory and adding the following lines:
 
     ```shell
-    GEMINI_API_KEY=your-api-key
+    GEMINI_API_KEY="your-api-key"
     ```
 
 2. Run the app:
