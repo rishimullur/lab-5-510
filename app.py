@@ -19,6 +19,8 @@ Please include the following details:
 - Resume formatting and structure recommendations
 - Any additional tips or advice to improve the chances of getting an interview
 
+If you cannot provide any concrete answer or if you are not aware of the job, please respond with "I am not aware of this job and cannot advice you."
+
 The job description is:
 {prompt}
 """
