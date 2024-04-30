@@ -2,7 +2,7 @@ Lab 5
 
 # App Name
 
-This is a simple app that utilizes the Gemini API and Streamlit to perform various tasks.
+This is a simple streamlit app that utilizes the Gemini API and Streamlit to act as an AI resume helper.
 
 ## Installation
 
