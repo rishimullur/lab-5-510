@@ -30,7 +30,6 @@ This is a simple app that utilizes the Gemini API and Streamlit to perform vario
 
     ```shell
     GEMINI_API_KEY=your-api-key
-    GEMINI_API_SECRET=your-api-secret
     ```
 
 2. Run the app:
